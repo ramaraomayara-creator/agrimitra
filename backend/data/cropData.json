@@ -1,0 +1,644 @@
+﻿{
+    "crops":  [
+                  {
+                      "id":  "rice",
+                      "name":  "Rice",
+                      "sub":  "Paddy Â· Kharif staple",
+                      "cat":  "Cereals",
+                      "img":  "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format\u0026fit=crop\u0026w=700\u0026q=80",
+                      "climate":  "Hot \u0026 humid, high rainfall",
+                      "soil":  "Clay / clay-loam, pH 5.5â€“7.0",
+                      "season":  "Kharif Â· Junâ€“Jul",
+                      "duration":  "Approximately 120â€“150 days depending on variety and growing conditions.",
+                      "seed":  {
+                                   "variety":  "Common types: Samba Mahsuri, Swarna, IR64 (choose local recommended variety)",
+                                   "method":  "Nursery + transplanting of 21â€“25 day seedlings, or direct seeding",
+                                   "season":  "Juneâ€“July with monsoon onset",
+                                   "requirement":  "25â€“30 kg/ha (transplanted)",
+                                   "germination":  "4â€“7 days",
+                                   "harvest":  "120â€“150 days from sowing",
+                                   "seedType":  "Certified paddy seed",
+                                   "treatment":  "Use dealer-treated or certified seed; follow packet and extension guidance.",
+                                   "spacing":  "20x15 cm (transplanted)",
+                                   "germRate":  "Approx. 85-90% with quality seed"
+                               },
+                      "timeline":  [
+                                       {
+                                           "icon":  "ðŸŒ±",
+                                           "stage":  "Seed / Sowing",
+                                           "text":  "Nursery sowing or direct seeding in puddled, levelled field.",
+                                           "days":  "Day 0"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¿",
+                                           "stage":  "Germination",
+                                           "text":  "Seedlings emerge; keep nursery moist but not flooded.",
+                                           "days":  "Days 4â€“7"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Vegetative Growth",
+                                           "text":  "Tillering stage â€” maximum tillers decide yield potential.",
+                                           "days":  "Days 15â€“70"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¼",
+                                           "stage":  "Flowering",
+                                           "text":  "Panicle emergence and pollination; avoid water stress.",
+                                           "days":  "Days 70â€“95"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Maturity",
+                                           "text":  "Grains fill and turn golden; drain field gradually.",
+                                           "days":  "Days 95â€“125"
+                                       },
+                                       {
+                                           "icon":  "ðŸšœ",
+                                           "stage":  "Harvesting",
+                                           "text":  "Cut when ~80% grains are golden; dry before storage.",
+                                           "days":  "Days 120â€“150"
+                                       }
+                                   ],
+                      "water":  "High - standing water 2-5 cm most of the season",
+                      "harvestPeriod":  "October-December (Kharif)",
+                      "conditions":  "Hot humid weather, assured water, levelled puddled field"
+                  },
+                  {
+                      "id":  "wheat",
+                      "name":  "Wheat",
+                      "sub":  "Rabi staple",
+                      "cat":  "Cereals",
+                      "img":  "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format\u0026fit=crop\u0026w=700\u0026q=80",
+                      "climate":  "Cool, dry winter with sunshine",
+                      "soil":  "Well-drained loam, pH 6.0â€“7.5",
+                      "season":  "Rabi Â· Octâ€“Dec",
+                      "duration":  "Approximately 110â€“130 days depending on variety and sowing time.",
+                      "seed":  {
+                                   "variety":  "Common types: HD-2967, PBW-550, Lok-1 (choose local recommended variety)",
+                                   "method":  "Line sowing with seed drill, depth 4â€“5 cm, ~20 cm rows",
+                                   "season":  "Octoberâ€“December; timely sowing yields best",
+                                   "requirement":  "100 kg/ha",
+                                   "germination":  "4â€“6 days",
+                                   "harvest":  "110â€“130 days from sowing",
+                                   "seedType":  "Certified wheat seed",
+                                   "treatment":  "Use treated certified seed from authorized dealers; follow label directions.",
+                                   "spacing":  "20 cm rows, 4-5 cm deep",
+                                   "germRate":  "Approx. 85-90% with quality seed"
+                               },
+                      "timeline":  [
+                                       {
+                                           "icon":  "ðŸŒ±",
+                                           "stage":  "Seed / Sowing",
+                                           "text":  "Sow in prepared, levelled seedbed at right depth.",
+                                           "days":  "Day 0"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¿",
+                                           "stage":  "Germination",
+                                           "text":  "Seedlings emerge evenly with adequate soil moisture.",
+                                           "days":  "Days 4â€“6"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Vegetative Growth",
+                                           "text":  "Tillering + crown-root stage â€” first irrigation ~day 21 is critical.",
+                                           "days":  "Days 15â€“65"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¼",
+                                           "stage":  "Flowering",
+                                           "text":  "Ear emergence and grain setting; avoid heat stress.",
+                                           "days":  "Days 65â€“85"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Maturity",
+                                           "text":  "Grains harden, straw turns golden.",
+                                           "days":  "Days 85â€“110"
+                                       },
+                                       {
+                                           "icon":  "ðŸšœ",
+                                           "stage":  "Harvesting",
+                                           "text":  "Combine when grain moisture is ~12%.",
+                                           "days":  "Days 110â€“130"
+                                       }
+                                   ],
+                      "water":  "Medium - 4-6 irrigations, crown-root stage critical",
+                      "harvestPeriod":  "March-April",
+                      "conditions":  "Cool dry winter with bright sunshine"
+                  },
+                  {
+                      "id":  "maize",
+                      "name":  "Maize",
+                      "sub":  "Corn Â· versatile",
+                      "cat":  "Cereals",
+                      "img":  "https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format\u0026fit=crop\u0026w=700\u0026q=80",
+                      "climate":  "Warm with full sun",
+                      "soil":  "Well-drained loam, pH 5.8â€“7.5",
+                      "season":  "Kharif Â· Junâ€“Jul",
+                      "duration":  "Approximately 90â€“110 days depending on variety and season.",
+                      "seed":  {
+                                   "variety":  "Hybrid corn (use local recommendation)",
+                                   "method":  "Dibbling at 60Ã—20 cm spacing, 2â€“3 cm deep",
+                                   "season":  "Juneâ€“July (Kharif); Octâ€“Nov Rabi in south",
+                                   "requirement":  "20â€“25 kg/ha",
+                                   "germination":  "4â€“7 days",
+                                   "harvest":  "90â€“110 days from sowing",
+                                   "seedType":  "Hybrid maize seed (fresh every season)",
+                                   "treatment":  "Buy pre-treated hybrid seed; do not save hybrid grain for sowing.",
+                                   "spacing":  "60x20 cm",
+                                   "germRate":  "Approx. 85-95% with quality seed"
+                               },
+                      "timeline":  [
+                                       {
+                                           "icon":  "ðŸŒ±",
+                                           "stage":  "Seed / Sowing",
+                                           "text":  "Sow in fine tilth with proper spacing.",
+                                           "days":  "Day 0"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¿",
+                                           "stage":  "Germination",
+                                           "text":  "Quick even emergence with warm soil.",
+                                           "days":  "Days 4â€“7"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Vegetative Growth",
+                                           "text":  "Knee-high to tasseling â€” irrigate at knee-high stage.",
+                                           "days":  "Days 12â€“55"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¼",
+                                           "stage":  "Flowering",
+                                           "text":  "Tasseling and silking; moisture stress here cuts yield.",
+                                           "days":  "Days 55â€“70"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Maturity",
+                                           "text":  "Grains harden, husk dries.",
+                                           "days":  "Days 70â€“95"
+                                       },
+                                       {
+                                           "icon":  "ðŸšœ",
+                                           "stage":  "Harvesting",
+                                           "text":  "Pick when husk turns brown; dry cobs before shelling.",
+                                           "days":  "Days 90â€“110"
+                                       }
+                                   ],
+                      "water":  "Medium - critical at knee-high, tasseling and grain-filling",
+                      "harvestPeriod":  "September-October (Kharif)",
+                      "conditions":  "Warm full sun, well-drained soil"
+                  },
+                  {
+                      "id":  "cotton",
+                      "name":  "Cotton",
+                      "sub":  "Fibre cash crop",
+                      "cat":  "Commercial Crops",
+                      "img":  "https://images.unsplash.com/photo-1592056570638-2e716f990a90?auto=format\u0026fit=crop\u0026w=700\u0026q=80",
+                      "climate":  "Warm, 200+ frost-free days",
+                      "soil":  "Deep black (regur) soil, pH 6â€“8",
+                      "season":  "Kharif Â· Aprâ€“Jun",
+                      "duration":  "Approximately 160â€“200 days depending on variety and climate.",
+                      "seed":  {
+                                   "variety":  "Bt hybrids recommended locally; deep-rooted long-duration types",
+                                   "method":  "Dibbling at 90Ã—60 cm on ridges",
+                                   "season":  "Aprilâ€“June with monsoon onset",
+                                   "requirement":  "1â€“1.5 kg/ha hybrid seed",
+                                   "germination":  "5â€“10 days",
+                                   "harvest":  "160â€“200 days; multiple pickings",
+                                   "seedType":  "Bt hybrid cotton seed",
+                                   "treatment":  "Coated hybrid seed from licensed sellers; follow packet guidance.",
+                                   "spacing":  "90x60 cm on ridges",
+                                   "germRate":  "Approx. 75-80% field emergence (hybrid)"
+                               },
+                      "timeline":  [
+                                       {
+                                           "icon":  "ðŸŒ±",
+                                           "stage":  "Seed / Sowing",
+                                           "text":  "Sow quality hybrid seed on prepared ridges.",
+                                           "days":  "Day 0"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¿",
+                                           "stage":  "Germination",
+                                           "text":  "Seedlings establish; gap-fill within 10 days.",
+                                           "days":  "Days 5â€“10"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Vegetative Growth",
+                                           "text":  "Squaring begins; balanced nutrition matters.",
+                                           "days":  "Days 15â€“70"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¼",
+                                           "stage":  "Flowering",
+                                           "text":  "Flowering and boll formation â€” protect from sucking pests.",
+                                           "days":  "Days 70â€“130"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Maturity",
+                                           "text":  "Bolls burst open in flushes.",
+                                           "days":  "Days 130â€“170"
+                                       },
+                                       {
+                                           "icon":  "ðŸšœ",
+                                           "stage":  "Harvesting",
+                                           "text":  "2â€“4 pickings as bolls burst; keep kapas dry and clean.",
+                                           "days":  "Days 160â€“200"
+                                       }
+                                   ],
+                      "water":  "Medium - protective irrigation at flowering and boll formation",
+                      "harvestPeriod":  "November-February (multiple pickings)",
+                      "conditions":  "Long warm frost-free season, moisture-retentive black soil"
+                  },
+                  {
+                      "id":  "groundnut",
+                      "name":  "Groundnut",
+                      "sub":  "Oilseed legume",
+                      "cat":  "Commercial Crops",
+                      "img":  "https://images.unsplash.com/photo-1567892737950-30c4db37cd89?auto=format\u0026fit=crop\u0026w=700\u0026q=80",
+                      "climate":  "Warm with moderate rain",
+                      "soil":  "Sandy loam, well-drained, pH 6â€“7",
+                      "season":  "Kharif Â· Junâ€“Jul",
+                      "duration":  "Approximately 100â€“120 days depending on variety.",
+                      "seed":  {
+                                   "variety":  "Common types: TAG-24, JL-24, Kadiri (use local recommendation)",
+                                   "method":  "Line sowing 30Ã—10 cm, 4â€“5 cm deep",
+                                   "season":  "Juneâ€“July",
+                                   "requirement":  "100â€“120 kg/ha kernels",
+                                   "germination":  "5â€“10 days",
+                                   "harvest":  "100â€“120 days from sowing",
+                                   "seedType":  "Bold graded kernels",
+                                   "treatment":  "Use fresh kernels; treat only with approved products per label guidance.",
+                                   "spacing":  "30x10 cm, 4-5 cm deep",
+                                   "germRate":  "Approx. 80-85% with bold fresh kernels"
+                               },
+                      "timeline":  [
+                                       {
+                                           "icon":  "ðŸŒ±",
+                                           "stage":  "Seed / Sowing",
+                                           "text":  "Sow bold kernels in fine seedbed.",
+                                           "days":  "Day 0"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¿",
+                                           "stage":  "Germination",
+                                           "text":  "Seedlings emerge; ensure good drainage.",
+                                           "days":  "Days 5â€“10"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Vegetative Growth",
+                                           "text":  "Canopy builds; gypsum at flowering helps pods.",
+                                           "days":  "Days 12â€“40"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¼",
+                                           "stage":  "Flowering",
+                                           "text":  "Flowering + pegging into soil â€” critical irrigation window.",
+                                           "days":  "Days 40â€“70"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Maturity",
+                                           "text":  "Leaves yellow, pods rattle inside.",
+                                           "days":  "Days 70â€“100"
+                                       },
+                                       {
+                                           "icon":  "ðŸšœ",
+                                           "stage":  "Harvesting",
+                                           "text":  "Lift pods promptly and dry quickly.",
+                                           "days":  "Days 100â€“120"
+                                       }
+                                   ],
+                      "water":  "Low-Medium - critical at flowering and pegging",
+                      "harvestPeriod":  "October-November",
+                      "conditions":  "Warm weather, light well-drained soil, no waterlogging"
+                  },
+                  {
+                      "id":  "chilli",
+                      "name":  "Chilli",
+                      "sub":  "Spice Â· high value",
+                      "cat":  "Vegetables",
+                      "img":  "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format\u0026fit=crop\u0026w=700\u0026q=80",
+                      "climate":  "Warm, humid-free air",
+                      "soil":  "Well-drained loam rich in organic matter, pH 6â€“7",
+                      "season":  "Nursery Junâ€“Jul",
+                      "duration":  "Approximately 150â€“180 days depending on variety.",
+                      "seed":  {
+                                   "variety":  "Common types: Guntur Teja, Byadgi, local hybrids (use local recommendation)",
+                                   "method":  "Nursery + transplant 30â€“35 day seedlings at 60Ã—45 cm",
+                                   "season":  "Nursery Juneâ€“July",
+                                   "requirement":  "1â€“1.25 kg/ha nursery seed",
+                                   "germination":  "7â€“12 days",
+                                   "harvest":  "150â€“180 days; pickings continue",
+                                   "seedType":  "Hybrid / open-pollinated chilli seed",
+                                   "treatment":  "Healthy nursery stock matters most; use approved nursery practices.",
+                                   "spacing":  "60x45 cm after transplanting",
+                                   "germRate":  "Approx. 70-80% (slow, 7-12 days)"
+                               },
+                      "timeline":  [
+                                       {
+                                           "icon":  "ðŸŒ±",
+                                           "stage":  "Seed / Sowing",
+                                           "text":  "Raise healthy nursery on raised beds.",
+                                           "days":  "Day 0"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¿",
+                                           "stage":  "Germination",
+                                           "text":  "Slow even germination; shade nursery lightly.",
+                                           "days":  "Days 7â€“12"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Vegetative Growth",
+                                           "text":  "Transplant + establish; mulch reduces weeds.",
+                                           "days":  "Days 30â€“70"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¼",
+                                           "stage":  "Flowering",
+                                           "text":  "Continuous flowering; sticky traps help monitor pests.",
+                                           "days":  "Days 70â€“110"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Maturity",
+                                           "text":  "Fruits turn green then red.",
+                                           "days":  "Days 110â€“150"
+                                       },
+                                       {
+                                           "icon":  "ðŸšœ",
+                                           "stage":  "Harvesting",
+                                           "text":  "Pick every 8â€“10 days, green or red ripe.",
+                                           "days":  "Days 150â€“180+"
+                                       }
+                                   ],
+                      "water":  "Medium - light frequent irrigation, drip ideal",
+                      "harvestPeriod":  "November-March (repeated pickings)",
+                      "conditions":  "Warm air, rich drained soil, shelter from heavy rain"
+                  },
+                  {
+                      "id":  "tomato",
+                      "name":  "Tomato",
+                      "sub":  "Short-duration veg",
+                      "cat":  "Vegetables",
+                      "img":  "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format\u0026fit=crop\u0026w=700\u0026q=80",
+                      "climate":  "Mild, frost-free",
+                      "soil":  "Well-drained loam rich in compost, pH 6â€“7",
+                      "season":  "Year-round (avoid peak frost)",
+                      "duration":  "Approximately 90â€“120 days depending on variety and season.",
+                      "seed":  {
+                                   "variety":  "Common hybrids: Arka, Pusa, private hybrids (use local recommendation)",
+                                   "method":  "Nursery + transplant ~25 day seedlings at 60Ã—45 cm with staking",
+                                   "season":  "Nursery most months except extreme frost/heat",
+                                   "requirement":  "80â€“100 g/ha hybrid seed",
+                                   "germination":  "5â€“8 days",
+                                   "harvest":  "90â€“120 days; pickings from ~65 days",
+                                   "seedType":  "F1 hybrid tomato seed",
+                                   "treatment":  "Sterile nursery media and healthy seedlings; harden before transplant.",
+                                   "spacing":  "60x45 cm with staking",
+                                   "germRate":  "Approx. 80-90% in warm nursery"
+                               },
+                      "timeline":  [
+                                       {
+                                           "icon":  "ðŸŒ±",
+                                           "stage":  "Seed / Sowing",
+                                           "text":  "Raise seedlings in nursery or pro-trays.",
+                                           "days":  "Day 0"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¿",
+                                           "stage":  "Germination",
+                                           "text":  "Fast emergence in warm media.",
+                                           "days":  "Days 5â€“8"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Vegetative Growth",
+                                           "text":  "Transplant + stake; drip irrigation ideal.",
+                                           "days":  "Days 25â€“50"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¼",
+                                           "stage":  "Flowering",
+                                           "text":  "Cluster flowering and fruit set begins.",
+                                           "days":  "Days 50â€“65"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Maturity",
+                                           "text":  "Fruits size up, mature-green to breaker stage.",
+                                           "days":  "Days 65â€“85"
+                                       },
+                                       {
+                                           "icon":  "ðŸšœ",
+                                           "stage":  "Harvesting",
+                                           "text":  "Pick every 3â€“4 days at required ripeness.",
+                                           "days":  "Days 90â€“120"
+                                       }
+                                   ],
+                      "water":  "Medium-High - drip every 2-3 days",
+                      "harvestPeriod":  "Rolling pickings from ~65 days after transplant",
+                      "conditions":  "Mild frost-free weather, compost-rich drained beds"
+                  },
+                  {
+                      "id":  "sugarcane",
+                      "name":  "Sugarcane",
+                      "sub":  "Long-duration cash",
+                      "cat":  "Commercial Crops",
+                      "img":  "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format\u0026fit=crop\u0026w=700\u0026q=80",
+                      "climate":  "Long sunny season",
+                      "soil":  "Deep loam / clay-loam, pH 6â€“7.5",
+                      "season":  "Febâ€“Mar / Oct",
+                      "duration":  "Approximately 300â€“365 days (10â€“12 months) depending on planting season.",
+                      "seed":  {
+                                   "variety":  "Common types: Co-86032, CoM-0265 (use mill-zone recommendation)",
+                                   "method":  "Three-bud setts in 90 cm furrows",
+                                   "season":  "Febâ€“Mar (spring), Oct (autumn in north)",
+                                   "requirement":  "~75,000 setts/ha",
+                                   "germination":  "Sprouting in 15â€“25 days",
+                                   "harvest":  "300â€“365 days from planting",
+                                   "seedType":  "Three-bud setts from healthy canes",
+                                   "treatment":  "Select disease-free setts; sett treatment per mill-zone guidance.",
+                                   "spacing":  "90 cm furrows",
+                                   "germRate":  "Approx. 70-80% bud sprouting"
+                               },
+                      "timeline":  [
+                                       {
+                                           "icon":  "ðŸŒ±",
+                                           "stage":  "Seed / Sowing",
+                                           "text":  "Plant treated setts in fertilised furrows.",
+                                           "days":  "Day 0"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¿",
+                                           "stage":  "Germination",
+                                           "text":  "Buds sprout; maintain moisture.",
+                                           "days":  "Days 15â€“25"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Vegetative Growth",
+                                           "text":  "Tillering then grand growth â€” peak water/nutrient need.",
+                                           "days":  "Days 30â€“240"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¼",
+                                           "stage":  "Flowering",
+                                           "text":  "Flowering (arrowing) may occur; not the harvest signal.",
+                                           "days":  "Days ~240â€“270"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Maturity",
+                                           "text":  "Sucrose accumulates; reduce irrigation before harvest.",
+                                           "days":  "Days 270â€“330"
+                                       },
+                                       {
+                                           "icon":  "ðŸšœ",
+                                           "stage":  "Harvesting",
+                                           "text":  "Cut at 10â€“12 months close to ground; ratoon for next crop.",
+                                           "days":  "Days 300â€“365"
+                                       }
+                                   ],
+                      "water":  "High - every 7-10 days in summer",
+                      "harvestPeriod":  "December-March (peak sucrose)",
+                      "conditions":  "Long sunshine, deep rich soil, assured irrigation"
+                  },
+                  {
+                      "id":  "banana",
+                      "name":  "Banana",
+                      "sub":  "Plantation fruit",
+                      "cat":  "Fruits",
+                      "img":  "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format\u0026fit=crop\u0026w=700\u0026q=80",
+                      "climate":  "Warm humid, sheltered from wind",
+                      "soil":  "Deep rich loam, pH 6â€“7.5",
+                      "season":  "Junâ€“Jul / Febâ€“Mar",
+                      "duration":  "Approximately 330â€“360 days (11â€“12 months) to first harvest.",
+                      "seed":  {
+                                   "variety":  "Tissue-culture Grand Naine, Robusta, Nendran (use local recommendation)",
+                                   "method":  "Pit planting 45Ã—45Ã—45 cm at 2Ã—2 m with compost + drip",
+                                   "season":  "Juneâ€“July or Febâ€“March",
+                                   "requirement":  "1,800â€“2,500 plants/ha",
+                                   "germination":  "Establishment 60â€“90 days",
+                                   "harvest":  "330â€“360 days to first bunch",
+                                   "seedType":  "Tissue-culture plantlets",
+                                   "treatment":  "Disease-free lab plantlets; disinfect pits and tools.",
+                                   "spacing":  "2x2 m pits",
+                                   "germRate":  "Approx. 95%+ establishment with tissue culture"
+                               },
+                      "timeline":  [
+                                       {
+                                           "icon":  "ðŸŒ±",
+                                           "stage":  "Seed / Sowing",
+                                           "text":  "Plant disease-free tissue-culture saplings in pits.",
+                                           "days":  "Day 0"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¿",
+                                           "stage":  "Germination",
+                                           "text":  "Establishment â€” regular light irrigation.",
+                                           "days":  "Days 0â€“90"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Vegetative Growth",
+                                           "text":  "Leaf production + desuckering; monthly nutrition.",
+                                           "days":  "Days 90â€“240"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¼",
+                                           "stage":  "Flowering",
+                                           "text":  "Shooting (bunch emergence).",
+                                           "days":  "Days ~240â€“270"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Maturity",
+                                           "text":  "Bunch filling over 90â€“120 days; propping prevents toppling.",
+                                           "days":  "Days 270â€“350"
+                                       },
+                                       {
+                                           "icon":  "ðŸšœ",
+                                           "stage":  "Harvesting",
+                                           "text":  "Cut at 75â€“80% maturity; ratoon followers continue.",
+                                           "days":  "Days 330â€“360"
+                                       }
+                                   ],
+                      "water":  "High - frequent light irrigation, drip saves ~40%",
+                      "harvestPeriod":  "Year-round; first bunch at 11-12 months",
+                      "conditions":  "Warm humid air, wind shelter, rich deep soil"
+                  },
+                  {
+                      "id":  "mango",
+                      "name":  "Mango",
+                      "sub":  "King of fruits",
+                      "cat":  "Fruits",
+                      "img":  "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format\u0026fit=crop\u0026w=700\u0026q=80",
+                      "climate":  "Dry flowering season, hot ripening",
+                      "soil":  "Deep well-drained loam / laterite, pH 5.5â€“7.5",
+                      "season":  "Planting Junâ€“Aug",
+                      "duration":  "Perennial orchard â€” first commercial fruits from year 3â€“4; annual cycle ~120â€“150 days flowering to harvest.",
+                      "seed":  {
+                                   "variety":  "Grafted Alphonso, Kesar, Dasheri, Langra (use local recommendation)",
+                                   "method":  "Grafted plants in 1Ã—1Ã—1 m pits, 10Ã—10 m (or high-density 5Ã—5 m)",
+                                   "season":  "Plant Juneâ€“August",
+                                   "requirement":  "100â€“200 grafts/ha",
+                                   "germination":  "Graft establishment in weeks; orchard built over years",
+                                   "harvest":  "Annual harvest Aprâ€“Jun from year 3â€“4",
+                                   "seedType":  "Grafted saplings (not seedlings)",
+                                   "treatment":  "Grafts from registered nurseries; protect graft joint.",
+                                   "spacing":  "10x10 m (5x5 m high-density)",
+                                   "germRate":  "Approx. 70-80% graft success in nurseries"
+                               },
+                      "timeline":  [
+                                       {
+                                           "icon":  "ðŸŒ±",
+                                           "stage":  "Seed / Sowing",
+                                           "text":  "Plant grafted saplings with compost + staking.",
+                                           "days":  "Year 0"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¿",
+                                           "stage":  "Germination",
+                                           "text":  "Graft establishment and first flushes.",
+                                           "days":  "Months 0â€“6"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Vegetative Growth",
+                                           "text":  "Canopy building + training/pruning (years 1â€“3).",
+                                           "days":  "Years 1â€“3"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¼",
+                                           "stage":  "Flowering",
+                                           "text":  "Annual flowering flush (typically Febâ€“Mar).",
+                                           "days":  "Annual"
+                                       },
+                                       {
+                                           "icon":  "ðŸŒ¾",
+                                           "stage":  "Maturity",
+                                           "text":  "Fruit set, marble to mature-hard stage.",
+                                           "days":  "Annual"
+                                       },
+                                       {
+                                           "icon":  "ðŸšœ",
+                                           "stage":  "Harvesting",
+                                           "text":  "Pick mature-hard; ripen off-tree (Aprâ€“Jun).",
+                                           "days":  "Annual"
+                                       }
+                                   ],
+                      "water":  "Low for bearing trees; regular for young plants",
+                      "harvestPeriod":  "April-June every year",
+                      "conditions":  "Dry flowering season followed by hot ripening weather"
+                  }
+              ]
+}
