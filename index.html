@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriMitra — Smart Farming for a Better Tomorrow</title>
+  <meta name="description" content="AgriMitra helps farmers with crop guides, weather updates, disease detection, market prices and smart farming tips." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <p><i class="fa-solid fa-phone"></i> Kisan Helpline: 1800-123-4567 &nbsp; | &nbsp; <i class="fa-solid fa-envelope"></i> support@agrimitra.in</p>
+      <div class="topbar-links">
+        <span><i class="fa-solid fa-location-dot"></i> India</span>
+        <span class="live-dot"><span class="pulse"></span> Mandi Live</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-leaf"></i></span>
+        <span class="logo-text">Agri<em>Mitra</em></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#crops">Crop Guide</a>
+        <a href="#weather">Weather</a>
+        <a href="#disease">Disease Detection</a>
+        <a href="#market">Market Prices</a>
+        <a href="#tips">Farming Tips</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="btn btn-primary nav-login-mobile" id="loginBtnMobile">Login</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary" id="loginBtn"><i class="fa-solid fa-user"></i> Login</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-badge reveal">
+        <i class="fa-solid fa-sprout"></i> Trusted by 50,000+ farmers across India
+      </div>
+      <h1 class="reveal">Smart Farming for a <span>Better Tomorrow</span></h1>
+      <p class="hero-sub reveal">Technology, knowledge and timely information to help farmers make better decisions — from sowing to selling.</p>
+      <div class="hero-buttons reveal">
+        <a href="#tools" class="btn btn-primary btn-lg">Explore Farming Tools <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#about" class="btn btn-glass btn-lg"><i class="fa-solid fa-play"></i> Learn More</a>
+      </div>
+      <div class="hero-mini-stats reveal">
+        <div><strong>100+</strong><span>Crop Guides</span></div>
+        <div class="divider"></div>
+        <div><strong>50+</strong><span>Farming Tips</span></div>
+        <div class="divider"></div>
+        <div><strong>24/7</strong><span>Info Access</span></div>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,60 C360,120 1080,0 1440,60 L1440,90 L0,90 Z" fill="#f7faf5"/></svg>
+    </div>
+    <a href="#tools" class="scroll-down" aria-label="Scroll down"><i class="fa-solid fa-chevron-down"></i></a>
+  </section>
+
+  <!-- QUICK ACCESS -->
+  <section class="section quick-section" id="tools">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">What do you need today?</span>
+        <h2>Quick Access Tools</h2>
+        <p>Everything a modern farmer needs — one click away.</p>
+      </div>
+      <div class="quick-grid">
+        <a href="#weather" class="quick-card reveal qc-blue">
+          <div class="qc-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+          <h3>Weather</h3>
+          <p>Check current weather and forecast</p>
+          <span class="qc-link">Check now <i class="fa-solid fa-arrow-right"></i></span>
+          <div class="qc-blob"></div>
+        </a>
+        <a href="#crops" class="quick-card reveal qc-green">
+          <div class="qc-icon"><i class="fa-solid fa-seedling"></i></div>
+          <h3>Crop Guide</h3>
+          <p>Find useful information about crops</p>
+          <span class="qc-link">Explore guides <i class="fa-solid fa-arrow-right"></i></span>
+          <div class="qc-blob"></div>
+        </a>
+        <a href="#disease" class="quick-card reveal qc-orange">
+          <div class="qc-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h3>Disease Detection</h3>
+          <p>Identify possible crop diseases</p>
+          <span class="qc-link">Scan crop <i class="fa-solid fa-arrow-right"></i></span>
+          <div class="qc-blob"></div>
+        </a>
+        <a href="#market" class="quick-card reveal qc-purple">
+          <div class="qc-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>Market Prices</h3>
+          <p>Track agricultural market prices</p>
+          <span class="qc-link">View prices <i class="fa-solid fa-arrow-right"></i></span>
+          <div class="qc-blob"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about-section" id="about">
+    <div class="container about-grid">
+      <div class="about-images reveal">
+        <img class="about-main" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80" alt="Farmer using technology in field" loading="lazy" />
+        <img class="about-small" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="Green farm at sunset" loading="lazy" />
+        <div class="about-exp-card">
+          <strong>12+</strong>
+          <span>Years supporting farmers</span>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <span class="eyebrow">About AgriMitra</span>
+        <h2>Technology that grows <span>with the farmer</span></h2>
+        <p>AgriMitra brings soil science, weather intelligence, crop pathology and live mandi data together in simple language. No jargon — just clear, timely guidance you can act on in the field.</p>
+        <ul class="about-list">
+          <li><i class="fa-solid fa-circle-check"></i> Region-wise crop calendars & soil advice</li>
+          <li><i class="fa-solid fa-circle-check"></i> Early disease warnings with photo detection</li>
+          <li><i class="fa-solid fa-circle-check"></i> Daily mandi prices & selling guidance</li>
+        </ul>
+        <div class="stats-row">
+          <div class="stat"><h3><span class="counter" data-target="100">0</span>+</h3><p>Crop Guides</p></div>
+          <div class="stat"><h3><span class="counter" data-target="50">0</span>+</h3><p>Farming Tips</p></div>
+          <div class="stat"><h3>24/7</h3><p>Information Access</p></div>
+        </div>
+        <a href="#crops" class="btn btn-primary">Discover More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR CROPS -->
+  <section class="section crops-section" id="crops">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Crop Library</span>
+        <h2>Popular Crops</h2>
+        <p>Season, soil, water and fertilizer guidance for India's most-grown crops.</p>
+      </div>
+      <div class="filter-pills reveal" id="cropFilters">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="kharif">Kharif</button>
+        <button data-filter="rabi">Rabi</button>
+        <button data-filter="vegetable">Vegetable</button>
+      </div>
+      <div class="crops-grid" id="cropsGrid">
+        <article class="crop-card reveal" data-cat="kharif">
+          <div class="crop-img">
+            <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=600&q=80" alt="Rice paddy field" loading="lazy" />
+            <span class="crop-tag">Kharif</span>
+          </div>
+          <div class="crop-body">
+            <h3>Rice <span>Paddy</span></h3>
+            <p class="crop-meta"><i class="fa-solid fa-droplet"></i> High water &nbsp; <i class="fa-solid fa-temperature-half"></i> 20–35°C</p>
+            <a href="crop-guide-details.html?crop=rice" class="btn btn-outline btn-sm">View Guide <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="crop-card reveal" data-cat="rabi">
+          <div class="crop-img">
+            <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80" alt="Wheat field" loading="lazy" />
+            <span class="crop-tag">Rabi</span>
+          </div>
+          <div class="crop-body">
+            <h3>Wheat <span>Rabi staple</span></h3>
+            <p class="crop-meta"><i class="fa-solid fa-wheat-awn"></i> Loam soil &nbsp; <i class="fa-solid fa-temperature-half"></i> 15–25°C</p>
+            <a href="crop-guide-details.html?crop=wheat" class="btn btn-outline btn-sm">View Guide <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="crop-card reveal" data-cat="kharif">
+          <div class="crop-img">
+            <img src="https://images.unsplash.com/photo-1592056570638-2e716f990a90?auto=format&fit=crop&w=600&q=80" alt="Cotton field" loading="lazy" />
+            <span class="crop-tag">Kharif</span>
+          </div>
+          <div class="crop-body">
+            <h3>Cotton <span>Cash crop</span></h3>
+            <p class="crop-meta"><i class="fa-solid fa-cloud-sun"></i> Black soil &nbsp; <i class="fa-solid fa-temperature-half"></i> 21–30°C</p>
+            <a href="crop-guide-details.html?crop=cotton" class="btn btn-outline btn-sm">View Guide <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="crop-card reveal" data-cat="kharif">
+          <div class="crop-img">
+            <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=600&q=80" alt="Maize corn field" loading="lazy" />
+            <span class="crop-tag">Kharif</span>
+          </div>
+          <div class="crop-body">
+            <h3>Maize <span>Corn</span></h3>
+            <p class="crop-meta"><i class="fa-solid fa-sun"></i> Full sun &nbsp; <i class="fa-solid fa-temperature-half"></i> 18–27°C</p>
+            <a href="crop-guide-details.html?crop=maize" class="btn btn-outline btn-sm">View Guide <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="crop-card reveal" data-cat="vegetable">
+          <div class="crop-img">
+            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80" alt="Tomatoes on vine" loading="lazy" />
+            <span class="crop-tag">Vegetable</span>
+          </div>
+          <div class="crop-body">
+            <h3>Tomato <span>High value</span></h3>
+            <p class="crop-meta"><i class="fa-solid fa-droplet"></i> Regular water &nbsp; <i class="fa-solid fa-temperature-half"></i> 20–30°C</p>
+            <a href="crop-guide-details.html?crop=tomato" class="btn btn-outline btn-sm">View Guide <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="crop-card reveal" data-cat="rabi">
+          <div class="crop-img">
+            <img src="https://images.unsplash.com/photo-1567892737950-30c4db37cd89?auto=format&fit=crop&w=600&q=80" alt="Groundnut harvest" loading="lazy" />
+            <span class="crop-tag">Rabi</span>
+          </div>
+          <div class="crop-body">
+            <h3>Groundnut <span>Oilseed</span></h3>
+            <p class="crop-meta"><i class="fa-solid fa-mountain"></i> Sandy loam &nbsp; <i class="fa-solid fa-temperature-half"></i> 25–35°C</p>
+            <a href="crop-guide-details.html?crop=groundnut" class="btn btn-outline btn-sm">View Guide <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISEASE DETECTION TEASER -->
+  <section class="section disease-section" id="disease">
+    <div class="container disease-grid">
+      <div class="disease-text reveal">
+        <span class="eyebrow">AI-Powered</span>
+        <h2>Detect Crop Disease <span>in Seconds</span></h2>
+        <p>Upload a photo of the affected leaf. Our demo model highlights possible issues and suggests next steps. Early detection can save up to 30% of yield.</p>
+        <div class="disease-steps">
+          <div><span>1</span><p>Take a clear leaf photo</p></div>
+          <div><span>2</span><p>Upload & analyze</p></div>
+          <div><span>3</span><p>Get treatment advice</p></div>
+        </div>
+        <div class="disease-actions">
+          <label class="btn btn-primary btn-lg file-btn">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Upload Leaf Photo
+            <input type="file" id="leafUpload" accept="image/*" hidden />
+          </label>
+          <button class="btn btn-outline-dark btn-lg" id="demoScanBtn"><i class="fa-solid fa-wand-magic-sparkles"></i> Try Demo Scan</button>
+        </div>
+        <p class="disease-note" id="diseaseResult"><i class="fa-solid fa-circle-info"></i> Sample mode — connect your ML model API to go live.</p>
+      </div>
+      <div class="disease-visual reveal">
+        <div class="scan-card">
+          <img id="leafPreview" src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=700&q=80" alt="Crop leaf" />
+          <div class="scan-frame" id="scanFrame"><span></span><span></span><span></span><span></span></div>
+          <div class="scan-badge"><i class="fa-solid fa-shield-halved"></i> 94.2% healthy (demo)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FARMING TIPS -->
+  <section class="section tips-section" id="tips">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Knowledge Hub</span>
+        <h2>Farming Tips for Better Yield</h2>
+        <p>Practical, field-tested advice from agronomists.</p>
+      </div>
+      <div class="tips-grid">
+        <article class="tip-card reveal">
+          <div class="tip-icon green"><i class="fa-solid fa-flask"></i></div>
+          <h3>Test Your Soil First</h3>
+          <p>Get a soil health card every 2 years. It saves up to 20% on fertilizer by showing exact NPK needs.</p>
+          <a href="#">Read more <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        <article class="tip-card reveal">
+          <div class="tip-icon blue"><i class="fa-solid fa-droplets"></i></div>
+          <h3>Smart Irrigation</h3>
+          <p>Water early morning (5–8 AM) to cut evaporation by 30%. Drip irrigation saves 50% water for vegetables.</p>
+          <a href="#">Read more <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        <article class="tip-card reveal">
+          <div class="tip-icon orange"><i class="fa-solid fa-bugs"></i></div>
+          <h3>Integrated Pest Control</h3>
+          <p>Use neem oil + pheromone traps before chemicals. Scout fields twice a week in flowering stage.</p>
+          <a href="#">Read more <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        <article class="tip-card reveal">
+          <div class="tip-icon purple"><i class="fa-solid fa-rotate"></i></div>
+          <h3>Rotate Your Crops</h3>
+          <p>Follow paddy with legumes like chickpea to naturally restore nitrogen and break pest cycles.</p>
+          <a href="#">Read more <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEATHER PREVIEW -->
+  <section class="section weather-section" id="weather">
+    <div class="container">
+      <div class="section-head light reveal">
+        <span class="eyebrow">Live Advisory</span>
+        <h2>Weather Preview</h2>
+        <p>Plan irrigation, spraying and harvesting with confidence.</p>
+      </div>
+      <div class="weather-card reveal">
+        <div class="weather-left">
+          <div class="city-row">
+            <select id="citySelect" aria-label="Select location">
+              <option value="nashik">Nashik, Maharashtra</option>
+              <option value="ludhiana">Ludhiana, Punjab</option>
+              <option value="jaipur">Jaipur, Rajasthan</option>
+              <option value="guntur">Guntur, Andhra Pradesh</option>
+            </select>
+            <span class="updated"><span class="pulse green"></span> Updated 10 min ago</span>
+          </div>
+          <div class="temp-row">
+            <i class="fa-solid fa-cloud-sun weather-main-icon"></i>
+            <h3><span id="tempValue">31</span>°C</h3>
+            <div>
+              <strong id="conditionValue">Partly Cloudy</strong>
+              <p>Feels like <span id="feelsValue">33</span>°C · Good day for spraying after 4 PM</p>
+            </div>
+          </div>
+          <div class="weather-stats">
+            <div><i class="fa-solid fa-droplet"></i><span>Humidity</span><strong id="humidityValue">62%</strong></div>
+            <div><i class="fa-solid fa-cloud-rain"></i><span>Rainfall</span><strong id="rainValue">4 mm</strong></div>
+            <div><i class="fa-solid fa-wind"></i><span>Wind Speed</span><strong id="windValue">14 km/h</strong></div>
+            <div><i class="fa-solid fa-eye"></i><span>Visibility</span><strong>8 km</strong></div>
+          </div>
+        </div>
+        <div class="weather-right">
+          <h4>5-Day Forecast</h4>
+          <ul id="forecastList">
+            <li><span>Today</span><i class="fa-solid fa-cloud-sun"></i><span>31° / 22°</span></li>
+            <li><span>Sat</span><i class="fa-solid fa-sun"></i><span>33° / 23°</span></li>
+            <li><span>Sun</span><i class="fa-solid fa-cloud-rain"></i><span>29° / 22°</span></li>
+            <li><span>Mon</span><i class="fa-solid fa-cloud-showers-heavy"></i><span>28° / 21°</span></li>
+            <li><span>Tue</span><i class="fa-solid fa-sun"></i><span>32° / 22°</span></li>
+          </ul>
+          <div class="advisory">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <p><strong>Advisory:</strong> Light rain likely Sunday. Postpone fertilizer application.</p>
+          </div>
+        </div>
+      </div>
+      <p class="sample-note">* Sample data for UI preview — connect OpenWeather / IMD API for live data.</p>
+    </div>
+  </section>
+
+  <!-- MARKET -->
+  <section class="section market-section" id="market">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Mandi Bhav</span>
+        <h2>Today's Market Prices</h2>
+        <p>Track prices before you sell. Updated daily at 8 AM.</p>
+      </div>
+      <div class="market-table-wrap reveal">
+        <table class="market-table">
+          <thead><tr><th>Crop</th><th>Mandi</th><th>Price / Quintal</th><th>Trend</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Wheat</strong></td><td>Indore</td><td>₹2,750</td><td class="up"><i class="fa-solid fa-arrow-trend-up"></i> +2.1%</td></tr>
+            <tr><td><strong>Rice (Paddy)</strong></td><td>Thanjavur</td><td>₹2,203</td><td class="up"><i class="fa-solid fa-arrow-trend-up"></i> +1.4%</td></tr>
+            <tr><td><strong>Cotton</strong></td><td>Rajkot</td><td>₹6,620</td><td class="down"><i class="fa-solid fa-arrow-trend-down"></i> -0.8%</td></tr>
+            <tr><td><strong>Tomato</strong></td><td>Nashik</td><td>₹1,850</td><td class="up"><i class="fa-solid fa-arrow-trend-up"></i> +5.3%</td></tr>
+            <tr><td><strong>Maize</strong></td><td>Nizamabad</td><td>₹2,090</td><td class="down"><i class="fa-solid fa-arrow-trend-down"></i> -0.5%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container cta-card reveal">
+      <div class="cta-text">
+        <h2>Grow Smarter. Farm Better.</h2>
+        <p>Get useful agricultural information in one place — crops, weather, disease help and mandi prices.</p>
+        <div class="cta-btns">
+          <a href="#tools" class="btn btn-light btn-lg">Start Exploring <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-outline-light btn-lg">Talk to Expert</a>
+        </div>
+      </div>
+      <div class="cta-img">
+        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=600&q=80" alt="Happy farmer in field" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACT -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo light">
+          <span class="logo-icon"><i class="fa-solid fa-leaf"></i></span>
+          <span class="logo-text">Agri<em>Mitra</em></span>
+        </a>
+        <p>Empowering farmers with technology, timely weather, crop science and fair market information — in simple language.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#crops">Crop Guide</a>
+        <a href="#weather">Weather</a>
+        <a href="#disease">Disease Detection</a>
+        <a href="#market">Market Prices</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#tips">Farming Tips</a>
+        <a href="#">Soil Health Card</a>
+        <a href="#">Govt. Schemes (PM-Kisan)</a>
+        <a href="#">Crop Calendar</a>
+        <a href="#">FAQs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <p><i class="fa-solid fa-location-dot"></i> AgriMitra, Pune, Maharashtra 411001</p>
+        <p><i class="fa-solid fa-phone"></i> 1800-123-4567 (Toll Free)</p>
+        <p><i class="fa-solid fa-envelope"></i> support@agrimitra.in</p>
+        <form class="newsletter" id="newsletterForm">
+          <input type="email" placeholder="Your email for advisories" required />
+          <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 AgriMitra. All rights reserved. Made with care for farmers.</p>
+        <p><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Sitemap</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LOGIN MODAL (password login kept unchanged + OTP added) -->
+  <div class="modal" id="loginModal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-head">
+        <span class="logo-icon"><i class="fa-solid fa-leaf"></i></span>
+        <h3>Welcome back, Mitra!</h3>
+        <p>Login to save crops, get alerts & mandi notifications.</p>
+      </div>
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab active" data-tab="password">Password</button>
+        <button type="button" class="auth-tab" data-tab="phone">Phone OTP</button>
+        <button type="button" class="auth-tab" data-tab="email">Email OTP</button>
+      </div>
+      <form id="loginForm" data-pane="password">
+        <label>Mobile / Email<input type="text" id="loginId" placeholder="e.g. 98765 43210" required /></label>
+        <label>Password<input type="password" placeholder="••••••••" required /></label>
+        <button type="submit" class="btn btn-primary btn-block">Login Securely</button>
+      </form>
+      <div class="otp-pane" data-pane="phone" hidden>
+        <label class="otp-label">Mobile Number
+          <span class="otp-row">
+            <input type="tel" id="phoneInput" placeholder="10-digit mobile number" maxlength="10" inputmode="numeric" />
+            <button type="button" class="btn btn-outline btn-sm" id="sendPhoneOtp">Send OTP</button>
+          </span>
+        </label>
+        <label class="otp-label">Enter OTP
+          <input type="text" id="phoneOtp" placeholder="4-digit code" maxlength="4" inputmode="numeric" />
+        </label>
+        <p class="otp-hint" id="phoneHint" hidden>Demo OTP: <strong id="phoneHintCode"></strong> (use 123456-free demo — enter shown code)</p>
+        <button type="button" class="btn btn-primary btn-block" id="verifyPhoneOtp">Verify & Continue</button>
+        <p class="otp-sub"><span id="phoneTimer"></span> <a href="#" id="resendPhone">Resend OTP</a></p>
+      </div>
+      <div class="otp-pane" data-pane="email" hidden>
+        <label class="otp-label">Email Address
+          <span class="otp-row">
+            <input type="email" id="emailInput" placeholder="you@example.com" />
+            <button type="button" class="btn btn-outline btn-sm" id="sendEmailOtp">Send OTP</button>
+          </span>
+        </label>
+        <label class="otp-label">Enter OTP
+          <input type="text" id="emailOtp" placeholder="4-digit code" maxlength="4" inputmode="numeric" />
+        </label>
+        <p class="otp-hint" id="emailHint" hidden>Demo OTP: <strong id="emailHintCode"></strong> (enter shown code)</p>
+        <button type="button" class="btn btn-primary btn-block" id="verifyEmailOtp">Verify & Continue</button>
+        <p class="otp-sub"><span id="emailTimer"></span> <a href="#" id="resendEmail">Resend OTP</a></p>
+      </div>
+      <p class="modal-foot">New here? <a href="#">Create farmer account</a></p>
+    </div>
+  </div>
+
+  <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

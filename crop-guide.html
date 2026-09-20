@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriMitra — Crop Guide</title>
+  <meta name="description" content="Find useful farming information for different crops — soil, climate, sowing, irrigation, fertilizer, diseases and harvesting." />
+  <script>
+    // LOGIN PROTECTION
+    (function () {
+      try {
+        if (localStorage.getItem('agrimitra_auth') !== 'verified') {
+          window.location.replace('index.html');
+        }
+      } catch (e) { window.location.replace('index.html'); }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="crop-guide.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>" />
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="home.html" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-leaf"></i></span>
+        <span class="logo-text">Agri<em>Mitra</em></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="home.html">Home</a>
+        <a href="crop-guide.html" class="active">Crop Guide</a>
+        <a href="home.html#weather">Weather</a>
+        <a href="home.html#disease">Disease Detection</a>
+        <a href="home.html#market">Market Prices</a>
+        <a href="home.html#tips">Farming Tips</a>
+        <a href="home.html#contact">Contact</a>
+        <a href="#" class="btn btn-primary nav-login-mobile" id="logoutBtnMobile"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="cg-hero">
+    <div class="container">
+      <p class="cg-crumb"><a href="home.html">Home</a> <i class="fa-solid fa-chevron-right"></i> Crop Guide</p>
+      <h1>Crop Guide</h1>
+      <p class="cg-sub">Find useful farming information for different crops.</p>
+      <div class="cg-searchbar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="cropSearch" placeholder="Search crops... (e.g. Rice, Cotton, Mango)" autocomplete="off" />
+        <button id="clearSearch" hidden aria-label="Clear search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="cg-cats" id="catPills">
+        <button class="active" data-cat="all">All</button>
+        <button data-cat="Cereals">Cereals</button>
+        <button data-cat="Pulses">Pulses</button>
+        <button data-cat="Vegetables">Vegetables</button>
+        <button data-cat="Fruits">Fruits</button>
+        <button data-cat="Commercial Crops">Commercial Crops</button>
+      </div>
+      <p class="cg-count" id="cropCount"></p>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <main class="container cg-main">
+    <div class="cg-grid" id="cropGrid"></div>
+    <div class="cg-empty" id="emptyState" hidden>
+      <div class="cg-empty-icon"><i class="fa-solid fa-seedling"></i></div>
+      <h3>No crop found. Try another crop.</h3>
+      <p>Check spelling or browse a category above.</p>
+      <button class="btn btn-primary" id="resetFilters">Show All Crops</button>
+    </div>
+    <p class="cg-disclaimer"><i class="fa-solid fa-circle-info"></i> Sample educational information. For specific chemical/pesticide dosage, always follow your local agricultural-extension officer's guidance.</p>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="home.html" class="logo light"><span class="logo-icon"><i class="fa-solid fa-leaf"></i></span><span class="logo-text">Agri<em>Mitra</em></span></a>
+        <p>Practical crop science in simple language — soil to harvest.</p>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><a href="home.html">Home</a><a href="crop-guide.html">Crop Guide</a><a href="home.html#weather">Weather</a><a href="home.html#market">Market Prices</a></div>
+      <div class="footer-col"><h4>Categories</h4><a href="crop-guide.html">Cereals</a><a href="crop-guide.html">Vegetables</a><a href="crop-guide.html">Fruits</a><a href="crop-guide.html">Commercial Crops</a></div>
+      <div class="footer-col"><h4>Contact</h4><p><i class="fa-solid fa-phone"></i> 1800-123-4567</p><p><i class="fa-solid fa-envelope"></i> support@agrimitra.in</p></div>
+    </div>
+    <div class="footer-bottom"><div class="container footer-bottom-inner"><p>© 2026 AgriMitra. All rights reserved.</p><p><a href="home.html">Back to Home</a></p></div></div>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <div class="toast" id="toast"></div>
+
+  <script src="crop-guide.js"></script>
+</body>
+</html>

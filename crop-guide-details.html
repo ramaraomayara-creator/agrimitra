@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriMitra — Crop Guide Details</title>
+  <meta name="description" content="Complete crop guide — market price, weather, markets and crop duration." />
+  <script>
+    // LOGIN PROTECTION
+    (function () {
+      try {
+        if (localStorage.getItem('agrimitra_auth') !== 'verified') {
+          window.location.replace('index.html');
+        }
+      } catch (e) { window.location.replace('index.html'); }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="crop-guide-details.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>" />
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="crop-selection.html" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-leaf"></i></span>
+        <span class="logo-text">Agri<em>Mitra</em></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="home.html">Home</a>
+        <a href="crop-selection.html">Change Crop</a>
+        <a href="crop-guide.html">Crop Guide</a>
+        <a href="home.html#weather">Weather</a>
+        <a href="home.html#disease">Disease Detection</a>
+        <a href="crop.html" id="navMarketLink">Market Prices</a>
+        <a href="#" class="btn btn-primary nav-login-mobile" id="logoutBtnMobile"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HEADER -->
+  <section class="gd-hero">
+    <div class="container gd-hero-inner">
+      <div class="gd-title">
+        <p class="crop-crumb"><a href="crop-selection.html">Select Crop</a> <i class="fa-solid fa-chevron-right"></i> <span id="crumbCrop">Crop</span></p>
+        <h1><span class="crop-leaf">🌱</span> <span id="gdName">Crop</span></h1>
+        <p class="gd-sub">Complete Crop Guide</p>
+        <div class="gd-back-row">
+          <a href="crop-guide.html" class="btn btn-glass btn-sm" id="backGuideBtn"><i class="fa-solid fa-arrow-left"></i> Back to Crop Guide</a>
+          <a href="crop-selection.html" class="btn btn-glass btn-sm"><i class="fa-solid fa-repeat"></i> Change Crop</a>
+        </div>
+      </div>
+      <div class="gd-overview-card">
+        <img id="gdImg" src="" alt="Crop" />
+        <div class="gd-ov-grid" id="ovGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container gd-main">
+    <!-- 4 MAIN OPTIONS -->
+    <section class="gd-tabs" id="gdTabs">
+      <button class="gd-tab active" data-tab="markets"><span class="gd-tab-ico shop"><i class="fa-solid fa-store"></i></span><span>Markets</span><small>Live mandi prices</small></button>
+      <button class="gd-tab" data-tab="weather"><span class="gd-tab-ico sky"><i class="fa-solid fa-cloud-sun"></i></span><span>Weather</span><small>Farm advisory</small></button>
+      <button class="gd-tab" data-tab="duration"><span class="gd-tab-ico leaf"><i class="fa-solid fa-seedling"></i></span><span>Crop Duration</span><small>Growth timeline</small></button>
+    </section>
+
+    <!-- MARKETS DASHBOARD PANEL -->
+    <section class="gd-panel" data-panel="markets">
+      <div class="dash-head">
+        <h2><i class="fa-solid fa-store"></i> Markets Dashboard</h2>
+        <div class="dash-live">
+          <span class="live-badge" id="mkLiveBadge" hidden><span class="pulse"></span> LIVE</span>
+          <span class="dash-updated" id="mkUpdated"></span>
+          <button class="btn btn-outline btn-sm" id="mkRefresh" type="button"><i class="fa-solid fa-rotate-right"></i> Refresh Prices</button>
+        </div>
+      </div>
+      <div class="filter-grid">
+        <label>Select State<select id="mkState"><option value="">Select State</option></select></label>
+        <label>Select District<select id="mkDistrict" disabled><option value="">Select District</option></select></label>
+        <label>Select Mandal<select id="mkMandal" disabled><option value="">Select Mandal</option></select></label>
+      </div>
+      <p class="gd-note small" id="mkLevel">Prices: Market level (data.gov.in) · Mandal: reference mapping. Select a location to load markets.</p>
+      <div class="dash-toolbar">
+        <div class="dash-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="mkSearch" placeholder="Search market, commodity, district, mandal..." autocomplete="off" />
+        </div>
+        <select id="mkCommodity" aria-label="Filter by commodity"><option value="">All Commodities</option></select>
+      </div>
+      <div class="dash-prompt" id="mkPrompt">
+        <div class="unav-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <h3>Select a location to view markets</h3>
+        <p>Choose State → District → Mandal above. Prices load live from the government mandi dataset.</p>
+      </div>
+      <div class="dash-skeleton" id="mkSkeleton" hidden aria-label="Loading market prices">
+        <div class="sk-row"></div><div class="sk-row"></div><div class="sk-row"></div>
+        <div class="sk-row"></div><div class="sk-row"></div>
+      </div>
+      <div class="price-unavailable" id="mkError" hidden>
+        <div class="unav-icon"><i class="fa-solid fa-cloud-slash"></i></div>
+        <h3 id="mkErrorTitle">Market data service is temporarily unavailable.</h3>
+        <p id="mkErrorText">Please try again using Refresh Prices above.</p>
+      </div>
+      <div class="price-unavailable" id="mkEmpty" hidden>
+        <div class="unav-icon"><i class="fa-solid fa-store-slash"></i></div>
+        <h3>No market data available for this location.</h3>
+        <p>Try a different Mandal, District or State.</p>
+      </div>
+      <div class="market-table-wrap" id="mkTableWrap" hidden>
+        <table class="market-table">
+          <thead><tr><th>Market Name</th><th>Market Place</th><th>Commodity</th><th>Variety</th><th>Current Price</th><th>Minimum Price</th><th>Maximum Price</th><th>Unit</th><th>Last Updated</th><th>Market Contact</th></tr></thead>
+          <tbody id="mkDashBody"></tbody>
+        </table>
+      </div>
+      <div class="market-details" id="mkDetails" hidden></div>
+      <div class="guar-panel" id="guarPanel" hidden>
+        <h4 class="md-sub"><i class="fa-solid fa-seedling"></i> Example: Guar Seed (Cluster Beans Seed)</h4>
+        <div class="price-loading" id="guarLoading"><i class="fa-solid fa-spinner fa-spin"></i> Loading Guar Seed price...</div>
+        <div id="guarData" hidden>
+          <div class="cg-detail-grid" id="guarGrid"></div>
+          <p class="gd-note small" id="guarSource"></p>
+        </div>
+        <div class="price-unavailable" id="guarEmpty" hidden>
+          <h4>No current price data available for this market.</h4>
+        </div>
+      </div>
+      <p class="gd-note small" id="mkSource"></p>
+      <p class="gd-note small">Farmer helpline (toll-free): <strong>1800-180-1551</strong> (Kisan Call Centre). Market contact numbers appear here only where officially listed.</p>
+    </section>
+
+    <!-- WEATHER PANEL -->
+    <section class="gd-panel" data-panel="weather" hidden>
+      <h2><i class="fa-solid fa-cloud-sun"></i> Weather for Farming</h2>
+      <p class="gd-note"><i class="fa-solid fa-circle-info"></i> Weather conditions can affect irrigation, sowing and harvesting.<br><small id="wxSource"></small></p>
+      <div class="filter-grid wx-loc">
+        <label>State<select id="wxState"><option value="">Default: New Delhi</option></select></label>
+        <label>Or<button class="btn btn-outline btn-sm" id="wxGeo" type="button"><i class="fa-solid fa-location-crosshairs"></i> Use My Location</button></label>
+      </div>
+      <div class="price-loading" id="gdWxLoading"><i class="fa-solid fa-spinner fa-spin"></i> Checking weather backend…</div>
+      <div class="price-unavailable" id="gdWxUnav" hidden>
+        <div class="unav-icon sky"><i class="fa-solid fa-cloud"></i></div>
+        <h3>Weather data is currently unavailable.</h3>
+        <p>Connect a weather API via <code>WEATHER_API_URL</code> in <code>.env</code> to see live conditions here.</p>
+        <button class="btn btn-primary btn-sm" id="gdWxRetry"><i class="fa-solid fa-rotate-right"></i> Retry</button>
+      </div>
+      <div class="wx-grid" id="gdWxData" hidden>
+        <div class="wx-tile"><i class="fa-solid fa-temperature-half"></i><span>Temperature</span><strong id="wxTemp">—</strong></div>
+        <div class="wx-tile"><i class="fa-solid fa-droplet"></i><span>Humidity</span><strong id="wxHum">—</strong></div>
+        <div class="wx-tile"><i class="fa-solid fa-cloud-rain"></i><span>Rainfall / Rain Probability</span><strong id="wxRain">—</strong></div>
+        <div class="wx-tile"><i class="fa-solid fa-wind"></i><span>Wind Speed</span><strong id="wxWind">—</strong></div>
+        <div class="wx-tile wide"><i class="fa-solid fa-cloud"></i><span>Weather Condition</span><strong id="wxCond">—</strong></div>
+      </div>
+    </section>
+
+    <!-- DURATION PANEL -->
+    <section class="gd-panel" data-panel="duration" hidden>
+      <h2><i class="fa-solid fa-seedling"></i> Crop Duration & Growth Timeline</h2>
+      <div class="duration-banner"><i class="fa-solid fa-hourglass-half"></i><div><span>Expected Crop Duration</span><strong id="gdDuration">—</strong></div></div>
+      <ol class="timeline" id="gdTimeline"></ol>
+      <div class="stage-grid" id="gdStages"></div>
+    </section>
+
+    <!-- SEED DETAILS -->
+    <section class="gd-panel static">
+      <h2><i class="fa-solid fa-seedling"></i> Seed Details</h2>
+      <div class="cg-detail-grid" id="gdSeed"></div>
+      <p class="gd-note small"><i class="fa-solid fa-triangle-exclamation"></i> General educational guidance — treat seed only with approved products as directed on the label, and confirm varieties with your local agricultural-extension officer.</p>
+    </section>
+
+    <!-- FARMER SUMMARY -->
+    <section class="gd-panel static">
+      <h2><i class="fa-solid fa-clipboard-check"></i> Quick Farming Summary</h2>
+      <div class="cg-detail-grid" id="gdSummary"></div>
+    </section>
+
+    <div class="crop-links">
+      <a href="crop-selection.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to Crop Selection</a>
+      <a href="crop-selection.html" class="btn btn-outline"><i class="fa-solid fa-repeat"></i> Change Crop</a>
+      <a href="crop.html" class="btn btn-primary" id="gdMarketPageBtn"><i class="fa-solid fa-chart-line"></i> Open Market Page</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom"><div class="container footer-bottom-inner"><p>© 2026 AgriMitra. All rights reserved.</p><p><a href="crop-selection.html">Change Crop</a> · <a href="home.html">Home</a></p></div></div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="crop-guide-details.js"></script>
+</body>
+</html>

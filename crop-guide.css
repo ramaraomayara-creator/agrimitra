@@ -1,0 +1,78 @@
+/* AgriMitra — Crop Guide page (matches green theme in style.css) */
+
+.cg-hero{
+  background:linear-gradient(135deg,#0d3b21,#166534 60%,#15803d);
+  color:#fff;padding:56px 0 40px;position:relative;overflow:hidden;
+}
+.cg-hero::before{
+  content:'';position:absolute;width:520px;height:520px;right:-160px;top:-160px;
+  background:radial-gradient(circle,rgba(134,239,172,.28),transparent 70%);
+}
+.cg-crumb{font-size:.82rem;color:#bfe3c6;margin-bottom:.6rem}
+.cg-crumb a{color:#fff;font-weight:700}
+.cg-crumb i{font-size:.65rem;margin:0 .4rem}
+.cg-hero h1{font-family:'Fraunces',serif;color:#fff;font-size:clamp(2rem,4.5vw,3rem)}
+.cg-sub{color:#d7ecd9;margin:.4rem 0 1.4rem}
+
+.cg-searchbar{
+  position:relative;display:flex;align-items:center;background:#fff;border-radius:14px;
+  padding:.2rem .4rem .2rem 1rem;max-width:560px;box-shadow:0 14px 35px rgba(0,0,0,.25);
+}
+.cg-searchbar > i{color:#15803d;margin-right:.6rem}
+.cg-searchbar input{flex:1;border:none;outline:none;padding:.85rem .2rem;font-size:.95rem;font-family:inherit;color:#10231a;background:transparent}
+.cg-searchbar button{border:none;background:#f0fdf4;color:#166534;width:36px;height:36px;border-radius:10px;cursor:pointer}
+
+.cg-cats{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1.1rem}
+.cg-cats button{
+  border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);color:#fff;
+  padding:.5rem 1.15rem;border-radius:100px;font-weight:700;font-size:.85rem;cursor:pointer;transition:.22s;
+}
+.cg-cats button:hover{background:rgba(255,255,255,.25)}
+.cg-cats button.active{background:#fff;color:#14532d;border-color:#fff}
+.cg-count{margin-top:.8rem;font-size:.85rem;color:#c4e5c8}
+
+.cg-main{padding:34px 0 70px}
+.cg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.cg-card{
+  background:#fff;border:1px solid #e5ede6;border-radius:18px;overflow:hidden;
+  box-shadow:0 12px 35px rgba(13,59,33,.10);transition:transform .28s,box-shadow .28s;display:flex;flex-direction:column;
+}
+.cg-card:hover{transform:translateY(-8px);box-shadow:0 22px 60px rgba(13,59,33,.18)}
+.cg-card.hide{display:none}
+.cg-img{position:relative;height:200px;overflow:hidden}
+.cg-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.cg-card:hover .cg-img img{transform:scale(1.07)}
+.crop-tag{position:absolute;top:12px;left:12px;background:rgba(13,59,33,.88);color:#fff;font-size:.74rem;font-weight:700;padding:.32rem .8rem;border-radius:100px}
+.cg-body{padding:1.25rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.cg-body h3{font-size:1.15rem;color:#0d3b21}
+.cg-body h3 small{color:#5b6b60;font-weight:500;font-size:.8rem;margin-left:.35rem}
+.cg-desc{font-size:.89rem;color:#5b6b60;flex:1}
+.cg-meta{display:flex;gap:.9rem;font-size:.8rem;color:#5b6b60}
+.cg-meta i{color:#16a34a;margin-right:.3rem}
+
+.cg-empty{text-align:center;background:#fff;border:1px dashed #b9d4be;border-radius:20px;padding:3rem 1.5rem}
+.cg-empty-icon{width:64px;height:64px;border-radius:50%;background:#f0fdf4;color:#15803d;display:grid;place-items:center;font-size:1.6rem;margin:0 auto 1rem}
+.cg-empty h3{color:#0d3b21;margin-bottom:.3rem}
+.cg-empty p{color:#5b6b60;margin-bottom:1.2rem}
+.cg-disclaimer{margin-top:1.6rem;font-size:.82rem;color:#5b6b60;background:#fff;border:1px solid #e5ede6;border-radius:12px;padding:.8rem 1rem}
+.cg-disclaimer.small{margin-top:1rem}
+
+/* Detail modal */
+.cg-modal .cg-detail-card{width:min(640px,100%);padding:0;overflow:hidden;max-height:90vh;display:flex;flex-direction:column}
+.cg-detail-hero{position:relative;height:220px;flex-shrink:0}
+.cg-detail-hero img{width:100%;height:100%;object-fit:cover}
+.cg-detail-body{padding:1.5rem 1.6rem;overflow-y:auto}
+.cg-detail-body h2{font-family:'Fraunces',serif;color:#0d3b21;font-size:1.7rem}
+.cg-detail-desc{color:#5b6b60;font-size:.92rem;margin:.4rem 0 1.1rem}
+.cg-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.cg-fact{background:#f7faf5;border:1px solid #e5ede6;border-radius:12px;padding:.75rem .9rem}
+.cg-fact.full{grid-column:1/-1}
+.cg-fact span{display:block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#15803d;margin-bottom:.25rem}
+.cg-fact p{font-size:.87rem;color:#20332a}
+
+@media(max-width:1020px){ .cg-grid{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:640px){
+  .cg-grid{grid-template-columns:1fr}
+  .cg-detail-grid{grid-template-columns:1fr}
+  .cg-hero{padding:40px 0 30px}
+}

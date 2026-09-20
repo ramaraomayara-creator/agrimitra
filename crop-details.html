@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriMitra — Crop Details</title>
+  <script>
+    // Alias: the full crop dashboard lives at crop-guide-details.html
+    (function () {
+      var q = window.location.search || '';
+      window.location.replace('crop-guide-details.html' + q);
+    })();
+  </script>
+</head>
+<body>
+  <p>Opening crop details… <a id="fallback" href="crop-guide-details.html">Continue</a></p>
+  <script>
+    document.getElementById('fallback').href = 'crop-guide-details.html' + window.location.search;
+  </script>
+</body>
+</html>

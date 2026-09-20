@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriMitra — Crop Market Price</title>
+  <meta name="description" content="Live market price for your selected crop." />
+  <script>
+    // LOGIN PROTECTION
+    (function () {
+      try {
+        if (localStorage.getItem('agrimitra_auth') !== 'verified') {
+          window.location.replace('index.html');
+        }
+      } catch (e) { window.location.replace('index.html'); }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="crop-page.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>" />
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="crop-selection.html" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-leaf"></i></span>
+        <span class="logo-text">Agri<em>Mitra</em></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="home.html">Home</a>
+        <a href="crop-selection.html">Change Crop</a>
+        <a href="crop-guide.html">Crop Guide</a>
+        <a href="home.html#weather">Weather</a>
+        <a href="home.html#disease">Disease Detection</a>
+        <a href="crop.html" class="active" id="navMarketLink">Market Prices</a>
+        <a href="#" class="btn btn-primary nav-login-mobile" id="logoutBtnMobile"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SELECTED CROP HEADER -->
+  <section class="crop-top">
+    <div class="container crop-top-inner">
+      <div>
+        <p class="crop-crumb"><a href="crop-selection.html">Select Crop</a> <i class="fa-solid fa-chevron-right"></i> <span id="crumbCrop">Crop</span></p>
+        <h1><span class="crop-leaf">🌱</span> <span id="cropTitle">Crop</span></h1>
+        <p class="crop-sub"><span id="cropTitle2">Crop</span> Market Information — live mandi rates from our backend.</p>
+      </div>
+      <div class="crop-top-actions">
+        <img id="cropImg" src="" alt="Selected crop" />
+        <a href="crop-selection.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-repeat"></i> Change Crop</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container crop-main">
+    <!-- FILTERS -->
+    <section class="filter-card">
+      <h3><i class="fa-solid fa-filter"></i> Filter by Location</h3>
+      <div class="filter-grid">
+        <label>State
+          <select id="stateSel"><option value="">Select State</option></select>
+        </label>
+        <label>District
+          <select id="districtSel" disabled><option value="">Select District</option></select>
+        </label>
+        <label>Market
+          <select id="marketSel" disabled><option value="">Select Market</option></select>
+        </label>
+      </div>
+    </section>
+
+    <!-- MARKET PRICE DASHBOARD -->
+    <section class="price-card" id="priceCard">
+      <div class="price-head">
+        <div>
+          <p class="price-kicker">Current Market Price</p>
+          <h2 id="priceHeading">RICE MARKET PRICE</h2>
+        </div>
+        <span class="live-dot dark"><span class="pulse"></span> <span id="liveLabel">Live via backend</span></span>
+      </div>
+
+      <!-- Loading -->
+      <div class="price-loading" id="priceLoading">
+        <i class="fa-solid fa-spinner fa-spin"></i> Loading market prices...
+      </div>
+
+      <!-- Unavailable (no fake prices shown) -->
+      <div class="price-unavailable" id="priceUnavailable" hidden>
+        <div class="unav-icon"><i class="fa-solid fa-cloud-slash"></i></div>
+        <h3>Market price data is currently unavailable.</h3>
+        <p id="unavDetail">Live market price is currently unavailable. Start the backend (<code>npm start</code>) and set <code>DATA_GOV_API_KEY</code> in <code>backend/.env</code> to see official mandi rates.</p>
+        <div class="unav-actions">
+          <button class="btn btn-primary btn-sm" id="retryBtn"><i class="fa-solid fa-rotate-right"></i> Retry</button>
+          <a class="btn btn-outline btn-sm" id="guideLink" href="crop-guide-details.html"><i class="fa-solid fa-book-open"></i> Open Crop Guide</a>
+        </div>
+      </div>
+
+      <!-- Data -->
+      <div class="price-data" id="priceData" hidden>
+        <div class="price-row-main">
+          <div><span>Crop</span><strong id="pdCrop">—</strong></div>
+          <div><span>Market</span><strong id="pdMarket">—</strong></div>
+          <div><span>Last Updated</span><strong id="pdUpdated">—</strong></div>
+        </div>
+        <div class="price-tiles">
+          <div class="ptile min"><span>Minimum Price</span><strong id="pdMin">—</strong><small id="pdUnit1">/ Quintal</small></div>
+          <div class="ptile modal"><span>Modal Price</span><strong id="pdModal">—</strong><small id="pdUnit2">/ Quintal</small></div>
+          <div class="ptile max"><span>Maximum Price</span><strong id="pdMax">—</strong><small id="pdUnit3">/ Quintal</small></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="crop-links">
+      <a href="crop-guide-details.html" class="btn btn-primary" id="cropGuideBtn"><i class="fa-solid fa-book-open"></i> View Guide</a>
+      <a href="home.html" class="btn btn-outline"><i class="fa-solid fa-house"></i> Go to Home</a>
+    </div>
+    <p class="price-note"><i class="fa-solid fa-shield-halved"></i> Prices load only from <code>GET /api/market-prices?crop=…</code> — never hard-coded. No real API configured yet, so no prices are shown as live.</p>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom"><div class="container footer-bottom-inner"><p>© 2026 AgriMitra. All rights reserved.</p><p><a href="crop-selection.html">Change Crop</a> · <a href="home.html">Home</a></p></div></div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="crop-page.js"></script>
+</body>
+</html>

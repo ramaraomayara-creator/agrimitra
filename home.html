@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriMitra — Home</title>
+  <meta name="description" content="AgriMitra home — crop guides, weather, disease detection, market prices and farming tips." />
+  <script>
+    // LOGIN PROTECTION: only accessible after OTP verification
+    (function () {
+      try {
+        if (localStorage.getItem('agrimitra_auth') !== 'verified') {
+          window.location.replace('index.html');
+        }
+      } catch (e) { window.location.replace('index.html'); }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>" />
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <p><i class="fa-solid fa-circle-check"></i> <span id="welcomeUser">Welcome, Farmer</span> &nbsp;|&nbsp; <i class="fa-solid fa-phone"></i> Helpline: 1800-123-4567</p>
+      <div class="topbar-links">
+        <span><i class="fa-solid fa-location-dot"></i> India</span>
+        <span class="live-dot"><span class="pulse"></span> Mandi Live</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="home.html" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-leaf"></i></span>
+        <span class="logo-text">Agri<em>Mitra</em></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="home.html" class="active">Home</a>
+        <a href="crop-guide.html">Crop Guide</a>
+        <a href="home.html#weather">Weather</a>
+        <a href="home.html#disease">Disease Detection</a>
+        <a href="home.html#market">Market Prices</a>
+        <a href="home.html#tips">Farming Tips</a>
+        <a href="home.html#contact">Contact</a>
+        <a href="#" class="btn btn-primary nav-login-mobile" id="logoutBtnMobile"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-badge reveal"><i class="fa-solid fa-house"></i> You are logged in — full access unlocked</div>
+      <h1 class="reveal">Namaste! Let's grow <span>smarter today</span></h1>
+      <p class="hero-sub reveal">Your crops, weather, disease alerts and mandi prices — all in one farmer-friendly place.</p>
+      <div class="hero-buttons reveal">
+        <a href="crop-guide.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-seedling"></i> Explore Crop Guide</a>
+        <a href="#tools" class="btn btn-glass btn-lg"><i class="fa-solid fa-play"></i> Farming Tools</a>
+      </div>
+      <div class="hero-mini-stats reveal">
+        <div><strong>100+</strong><span>Crop Guides</span></div>
+        <div class="divider"></div>
+        <div><strong>50+</strong><span>Farming Tips</span></div>
+        <div class="divider"></div>
+        <div><strong>24/7</strong><span>Info Access</span></div>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,60 C360,120 1080,0 1440,60 L1440,90 L0,90 Z" fill="#f7faf5"/></svg>
+    </div>
+  </section>
+
+  <!-- BIG CROP GUIDE BANNER -->
+  <section class="section" id="crop-guide-banner" style="padding-bottom:0">
+    <div class="container">
+      <div class="cta-card reveal" style="background:linear-gradient(120deg,#15803d,#0d3b21 75%)">
+        <div class="cta-text">
+          <span class="eyebrow" style="background:rgba(255,255,255,.18);color:#fff">Most Loved by Farmers</span>
+          <h2>Crop Guide</h2>
+          <p>Get complete information about crops, cultivation methods, soil requirements, irrigation, fertilizers and harvesting.</p>
+          <div class="cta-btns">
+            <a href="crop-guide.html" class="btn btn-light btn-lg">Explore Crop Guide <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="crop-guide.html" class="btn btn-outline-light btn-lg">Search Crops</a>
+          </div>
+        </div>
+        <div class="cta-img">
+          <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=700&q=80" alt="Wheat field" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK ACCESS -->
+  <section class="section quick-section" id="tools">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">What do you need today?</span>
+        <h2>Quick Access Tools</h2>
+        <p>Everything a modern farmer needs — one click away.</p>
+      </div>
+      <div class="quick-grid">
+        <a href="home.html#weather" class="quick-card reveal qc-blue">
+          <div class="qc-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+          <h3>Weather</h3><p>Check current weather and forecast</p>
+          <span class="qc-link">Check now <i class="fa-solid fa-arrow-right"></i></span><div class="qc-blob"></div>
+        </a>
+        <a href="crop-guide.html" class="quick-card reveal qc-green">
+          <div class="qc-icon"><i class="fa-solid fa-seedling"></i></div>
+          <h3>Crop Guide</h3><p>Find useful information about crops</p>
+          <span class="qc-link">Explore guides <i class="fa-solid fa-arrow-right"></i></span><div class="qc-blob"></div>
+        </a>
+        <a href="home.html#disease" class="quick-card reveal qc-orange">
+          <div class="qc-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h3>Disease Detection</h3><p>Identify possible crop diseases</p>
+          <span class="qc-link">Scan crop <i class="fa-solid fa-arrow-right"></i></span><div class="qc-blob"></div>
+        </a>
+        <a href="home.html#market" class="quick-card reveal qc-purple">
+          <div class="qc-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>Market Prices</h3><p>Track agricultural market prices</p>
+          <span class="qc-link">View prices <i class="fa-solid fa-arrow-right"></i></span><div class="qc-blob"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE CROP GUIDES -->
+  <section class="section crops-section" id="crops" style="padding-top:20px">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Crop Library Preview</span>
+        <h2>Explore Crop Guides</h2>
+        <p>Start with popular crops — open the full library for 10+ detailed guides.</p>
+      </div>
+      <div class="crops-grid">
+        <article class="crop-card reveal">
+          <div class="crop-img"><img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=600&q=80" alt="Rice paddy field" loading="lazy" /><span class="crop-tag">Cereals</span></div>
+          <div class="crop-body"><h3>Rice <span>Paddy</span></h3><p class="crop-meta">Kharif staple · high water need</p><a href="crop-guide.html?crop=rice" class="btn btn-outline btn-sm">View Guide <i class="fa-solid fa-arrow-right"></i></a></div>
+        </article>
+        <article class="crop-card reveal">
+          <div class="crop-img"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80" alt="Wheat field" loading="lazy" /><span class="crop-tag">Cereals</span></div>
+          <div class="crop-body"><h3>Wheat <span>Rabi staple</span></h3><p class="crop-meta">Cool season · loam soil</p><a href="crop-guide.html?crop=wheat" class="btn btn-outline btn-sm">View Guide <i class="fa-solid fa-arrow-right"></i></a></div>
+        </article>
+        <article class="crop-card reveal">
+          <div class="crop-img"><img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80" alt="Tomatoes" loading="lazy" /><span class="crop-tag">Vegetables</span></div>
+          <div class="crop-body"><h3>Tomato <span>High value</span></h3><p class="crop-meta">Short duration · drip friendly</p><a href="crop-guide.html?crop=tomato" class="btn btn-outline btn-sm">View Guide <i class="fa-solid fa-arrow-right"></i></a></div>
+        </article>
+        <article class="crop-card reveal">
+          <div class="crop-img"><img src="https://images.unsplash.com/photo-1592056570638-2e716f990a90?auto=format&fit=crop&w=600&q=80" alt="Cotton field" loading="lazy" /><span class="crop-tag">Commercial</span></div>
+          <div class="crop-body"><h3>Cotton <span>Cash crop</span></h3><p class="crop-meta">Black soil · warm climate</p><a href="crop-guide.html?crop=cotton" class="btn btn-outline btn-sm">View Guide <i class="fa-solid fa-arrow-right"></i></a></div>
+        </article>
+      </div>
+      <div style="text-align:center;margin-top:2rem" class="reveal">
+        <a href="crop-guide.html" class="btn btn-primary btn-lg">View All Crops <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEATHER -->
+  <section class="section weather-section" id="weather">
+    <div class="container">
+      <div class="section-head light reveal"><span class="eyebrow">Live Advisory</span><h2>Weather Preview</h2><p>Plan irrigation, spraying and harvesting with confidence.</p></div>
+      <div class="weather-card reveal">
+        <div class="weather-left">
+          <div class="city-row">
+            <select id="citySelect" aria-label="Select location">
+              <option value="nashik">Nashik, Maharashtra</option>
+              <option value="ludhiana">Ludhiana, Punjab</option>
+              <option value="jaipur">Jaipur, Rajasthan</option>
+              <option value="guntur">Guntur, Andhra Pradesh</option>
+            </select>
+            <span class="updated"><span class="pulse green"></span> Updated 10 min ago</span>
+          </div>
+          <div class="temp-row">
+            <i class="fa-solid fa-cloud-sun weather-main-icon"></i>
+            <h3><span id="tempValue">31</span>°C</h3>
+            <div><strong id="conditionValue">Partly Cloudy</strong><p>Feels like <span id="feelsValue">33</span>°C · Good day for spraying after 4 PM</p></div>
+          </div>
+          <div class="weather-stats">
+            <div><i class="fa-solid fa-droplet"></i><span>Humidity</span><strong id="humidityValue">62%</strong></div>
+            <div><i class="fa-solid fa-cloud-rain"></i><span>Rainfall</span><strong id="rainValue">4 mm</strong></div>
+            <div><i class="fa-solid fa-wind"></i><span>Wind Speed</span><strong id="windValue">14 km/h</strong></div>
+            <div><i class="fa-solid fa-eye"></i><span>Visibility</span><strong>8 km</strong></div>
+          </div>
+        </div>
+        <div class="weather-right">
+          <h4>5-Day Forecast</h4>
+          <ul><li><span>Today</span><i class="fa-solid fa-cloud-sun"></i><span>31° / 22°</span></li><li><span>Sat</span><i class="fa-solid fa-sun"></i><span>33° / 23°</span></li><li><span>Sun</span><i class="fa-solid fa-cloud-rain"></i><span>29° / 22°</span></li><li><span>Mon</span><i class="fa-solid fa-cloud-showers-heavy"></i><span>28° / 21°</span></li><li><span>Tue</span><i class="fa-solid fa-sun"></i><span>32° / 22°</span></li></ul>
+          <div class="advisory"><i class="fa-solid fa-triangle-exclamation"></i><p><strong>Advisory:</strong> Light rain likely Sunday. Postpone fertilizer application.</p></div>
+        </div>
+      </div>
+      <p class="sample-note">* Sample data for UI preview — connect OpenWeather / IMD API for live data.</p>
+    </div>
+  </section>
+
+  <!-- DISEASE -->
+  <section class="section disease-section" id="disease">
+    <div class="container disease-grid">
+      <div class="disease-text reveal">
+        <span class="eyebrow">AI-Powered</span>
+        <h2>Detect Crop Disease <span>in Seconds</span></h2>
+        <p>Upload a photo of the affected leaf. Our demo model highlights possible issues and suggests next steps.</p>
+        <div class="disease-actions">
+          <a href="home.html#disease" class="btn btn-primary btn-lg" onclick="document.getElementById('leafUpload')?.click();return false;"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Leaf Photo</a>
+          <a href="crop-guide.html" class="btn btn-outline-light btn-lg"><i class="fa-solid fa-book-open"></i> Check Crop Diseases</a>
+        </div>
+        <input type="file" id="leafUpload" accept="image/*" hidden />
+        <p class="disease-note" id="diseaseResult"><i class="fa-solid fa-circle-info"></i> Tip: disease details for every crop are inside Crop Guide → View Guide.</p>
+      </div>
+      <div class="disease-visual reveal">
+        <div class="scan-card">
+          <img id="leafPreview" src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=700&q=80" alt="Crop leaf" />
+          <div class="scan-frame" id="scanFrame"><span></span><span></span><span></span><span></span></div>
+          <div class="scan-badge"><i class="fa-solid fa-shield-halved"></i> Photo scan demo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKET -->
+  <section class="section market-section" id="market">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">Mandi Bhav</span><h2>Today's Market Prices</h2><p>Track prices before you sell. Updated daily at 8 AM.</p></div>
+      <div class="market-table-wrap reveal">
+        <table class="market-table">
+          <thead><tr><th>Crop</th><th>Mandi</th><th>Price / Quintal</th><th>Trend</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Wheat</strong></td><td>Indore</td><td>₹2,750</td><td class="up"><i class="fa-solid fa-arrow-trend-up"></i> +2.1%</td></tr>
+            <tr><td><strong>Rice (Paddy)</strong></td><td>Thanjavur</td><td>₹2,203</td><td class="up"><i class="fa-solid fa-arrow-trend-up"></i> +1.4%</td></tr>
+            <tr><td><strong>Cotton</strong></td><td>Rajkot</td><td>₹6,620</td><td class="down"><i class="fa-solid fa-arrow-trend-down"></i> -0.8%</td></tr>
+            <tr><td><strong>Tomato</strong></td><td>Nashik</td><td>₹1,850</td><td class="up"><i class="fa-solid fa-arrow-trend-up"></i> +5.3%</td></tr>
+            <tr><td><strong>Maize</strong></td><td>Nizamabad</td><td>₹2,090</td><td class="down"><i class="fa-solid fa-arrow-trend-down"></i> -0.5%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPS -->
+  <section class="section tips-section" id="tips">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">Knowledge Hub</span><h2>Farming Tips for Better Yield</h2><p>Practical, field-tested advice from agronomists.</p></div>
+      <div class="tips-grid">
+        <article class="tip-card reveal"><div class="tip-icon green"><i class="fa-solid fa-flask"></i></div><h3>Test Your Soil First</h3><p>Get a soil health card every 2 years. It saves up to 20% on fertilizer.</p><a href="crop-guide.html">See soil needs per crop <i class="fa-solid fa-arrow-right"></i></a></article>
+        <article class="tip-card reveal"><div class="tip-icon blue"><i class="fa-solid fa-droplets"></i></div><h3>Smart Irrigation</h3><p>Water early morning to cut evaporation. Drip saves 50% water for vegetables.</p><a href="crop-guide.html">See irrigation per crop <i class="fa-solid fa-arrow-right"></i></a></article>
+        <article class="tip-card reveal"><div class="tip-icon orange"><i class="fa-solid fa-bugs"></i></div><h3>Integrated Pest Control</h3><p>Use neem + traps before chemicals. Scout fields twice a week.</p><a href="crop-guide.html">See pest mgmt per crop <i class="fa-solid fa-arrow-right"></i></a></article>
+        <article class="tip-card reveal"><div class="tip-icon purple"><i class="fa-solid fa-rotate"></i></div><h3>Rotate Your Crops</h3><p>Follow paddy with legumes to restore nitrogen naturally.</p><a href="crop-guide.html">Plan with crop guides <i class="fa-solid fa-arrow-right"></i></a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="home.html" class="logo light"><span class="logo-icon"><i class="fa-solid fa-leaf"></i></span><span class="logo-text">Agri<em>Mitra</em></span></a>
+        <p>Empowering farmers with technology, timely weather, crop science and fair market information.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><a href="home.html">Home</a><a href="crop-guide.html">Crop Guide</a><a href="home.html#weather">Weather</a><a href="home.html#disease">Disease Detection</a><a href="home.html#market">Market Prices</a></div>
+      <div class="footer-col"><h4>Resources</h4><a href="crop-guide.html">All Crops</a><a href="#">Soil Health Card</a><a href="#">Govt. Schemes (PM-Kisan)</a><a href="#">Crop Calendar</a><a href="#">FAQs</a></div>
+      <div class="footer-col"><h4>Contact Us</h4><p><i class="fa-solid fa-location-dot"></i> AgriMitra, Pune, Maharashtra 411001</p><p><i class="fa-solid fa-phone"></i> 1800-123-4567 (Toll Free)</p><p><i class="fa-solid fa-envelope"></i> support@agrimitra.in</p></div>
+    </div>
+    <div class="footer-bottom"><div class="container footer-bottom-inner"><p>© 2026 AgriMitra. All rights reserved.</p><p><a href="#">Privacy</a> · <a href="#">Terms</a></p></div></div>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // Minimal home interactions (no dependency on login modal)
+    (function () {
+      const $ = (s, c = document) => c.querySelector(s);
+      const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+      try {
+        const u = localStorage.getItem('agrimitra_user');
+        if (u) $('#welcomeUser').textContent = 'Welcome, ' + u;
+      } catch (e) {}
+      function logout(e) {
+        if (e) e.preventDefault();
+        try { localStorage.removeItem('agrimitra_auth'); } catch (err) {}
+        window.location.href = 'index.html';
+      }
+      $('#logoutBtn').addEventListener('click', logout);
+      $('#logoutBtnMobile').addEventListener('click', logout);
+      const nb = $('#navbar'), hb = $('#hamburger'), nl = $('#navLinks');
+      window.addEventListener('scroll', () => {
+        nb.classList.toggle('scrolled', window.scrollY > 20);
+        $('#backToTop').classList.toggle('show', window.scrollY > 600);
+      }, { passive: true });
+      hb.addEventListener('click', () => { hb.classList.toggle('open'); nl.classList.toggle('open'); });
+      $$('#navLinks a').forEach(a => a.addEventListener('click', () => { hb.classList.remove('open'); nl.classList.remove('open'); }));
+      const rev = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); rev.unobserve(x.target); } }), { threshold: 0.12 });
+      $$('.reveal').forEach(el => rev.observe(el));
+      $('#backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      let toastT;
+      function toast(m) { const t = $('#toast'); t.textContent = m; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 3000); }
+      const WEATHER = { nashik: { t: 31, feels: 33, c: 'Partly Cloudy', h: '62%', r: '4 mm', w: '14 km/h' }, ludhiana: { t: 34, feels: 36, c: 'Sunny & Hot', h: '48%', r: '0 mm', w: '11 km/h' }, jaipur: { t: 36, feels: 38, c: 'Clear & Dry', h: '35%', r: '0 mm', w: '18 km/h' }, guntur: { t: 32, feels: 35, c: 'Humid, Light Rain', h: '74%', r: '9 mm', w: '12 km/h' } };
+      const cs = $('#citySelect');
+      if (cs) cs.addEventListener('change', e => {
+        const d = WEATHER[e.target.value]; if (!d) return;
+        $('#tempValue').textContent = d.t; $('#feelsValue').textContent = d.feels;
+        $('#conditionValue').textContent = d.c; $('#humidityValue').textContent = d.h;
+        $('#rainValue').textContent = d.r; $('#windValue').textContent = d.w;
+        toast('Weather updated (sample data).');
+      });
+    })();
+  </script>
+</body>
+</html>

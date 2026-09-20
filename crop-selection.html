@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriMitra — Select Your Crop</title>
+  <meta name="description" content="Select your crop to see live market prices and farming guidance." />
+  <script>
+    // LOGIN PROTECTION: must complete OTP verification first
+    (function () {
+      try {
+        if (localStorage.getItem('agrimitra_auth') !== 'verified') {
+          window.location.replace('index.html');
+        }
+      } catch (e) { window.location.replace('index.html'); }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="crop-selection.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>" />
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="crop-selection.html" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-leaf"></i></span>
+        <span class="logo-text">Agri<em>Mitra</em></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="crop-selection.html" class="active">Select Crop</a>
+        <a href="crop-guide.html">Crop Guide</a>
+        <a href="home.html">Home</a>
+        <a href="home.html#weather">Weather</a>
+        <a href="home.html#contact">Contact</a>
+        <a href="#" class="btn btn-primary nav-login-mobile" id="logoutBtnMobile"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </nav>
+      <div class="nav-actions">
+        <span class="sel-user" id="selUser"></span>
+        <a href="#" class="btn btn-primary" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="sel-hero">
+    <div class="container">
+      <span class="eyebrow"><i class="fa-solid fa-wheat-awn"></i> Step 1 of 2 — Choose your crop</span>
+      <h1>Select Your Crop</h1>
+      <p>Pick a crop below to see its <strong>live market price</strong> and growing guidance.</p>
+      <div class="sel-searchbar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="selSearch" placeholder="Search crop... (e.g. Rice, Mango)" autocomplete="off" />
+      </div>
+    </div>
+  </section>
+
+  <main class="container sel-main">
+    <div class="sel-grid" id="selGrid"></div>
+    <div class="cg-empty sel-empty" id="selEmpty" hidden>
+      <div class="cg-empty-icon"><i class="fa-solid fa-seedling"></i></div>
+      <h3>No crop found. Try another crop.</h3>
+      <button class="btn btn-primary" id="selReset">Show All Crops</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom"><div class="container footer-bottom-inner"><p>© 2026 AgriMitra. All rights reserved.</p><p><a href="home.html">Home</a> · <a href="crop-guide.html">Crop Guide</a></p></div></div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="crop-selection.js"></script>
+</body>
+</html>
